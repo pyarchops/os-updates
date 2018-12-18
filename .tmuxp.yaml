@@ -1,0 +1,87 @@
+# tmuxp load tmuxp.yaml
+# tmux kill-session -t python-project
+
+session_name: python-project
+start_directory: ./
+
+windows:
+- window_name: editor
+  layout: main-horizontal
+  options:
+    automatic-rename: 'off'
+    main-pane-height: 40
+  panes:
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - cd archops_os_updates
+    - ctags -R .
+    - vim .
+    focus: true
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - cd archops_os_updates
+    - bpython
+
+- window_name: debug
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo log --patterns="*.py" --ignore-patterns="./.tox/*;./archops_os_updates-*"  --recursive
+
+- window_name: tests
+  layout: 62a7,170x73,0,0[170x8,0,0,89,170x8,0,9,90,170x8,0,18,91,170x8,0,27,92,170x8,0,36,93,170x8,0,45,94,170x8,0,54,95,170x10,0,63,96]
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e flake8 ' --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e pylint ' --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py"  --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py27 --workdir=.tox/py27'  --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py35 --workdir=.tox/py35' --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py36 --workdir=.tox/py36' --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py37 --workdir=.tox/py37'  --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy --workdir=.tox/pypy'  --drop
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy35 --workdir=.tox/pypy  '  --drop
+
+- window_name: bash
+  layout: main-horizontal
+  panes:
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - cd archops_os_updates
+  - shell_command:
+    - bash -l
+    - source .venv/bin/activate
+    - cd archops_os_updates
+    - tmux select-window -t 0
+    - tmux select-pane -t 0
+    - reset
