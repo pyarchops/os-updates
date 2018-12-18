@@ -143,7 +143,8 @@ def test_os_updates_using_docker():
                   private_key_file=container['pkey'],
                   become=True,
                   become_user='root',
-                  sudo=True)
+                  sudo=True,
+                  ssh_extra_args='-o StrictHostKeyChecking=no')
 
         try:
             result = os_updates.apply(api)
