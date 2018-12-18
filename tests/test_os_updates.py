@@ -35,12 +35,12 @@ def ephemeral_docker_container(**kwargs):
             'port': docker_container_port(container_id),
             'pkey': 'tests/fixtures/id_rsa'
         })
-        #docker_down(container_id)
-        #docker_rm(container_id)
+        docker_down(container_id)
+        docker_rm(container_id)
     except Exception as error:
         print('jhsajdfhdsf')
-        #docker_down(container_id)
-        #docker_rm(container_id)
+        docker_down(container_id)
+        docker_rm(container_id)
 
 
 def docker_up(image, privileged=False):
