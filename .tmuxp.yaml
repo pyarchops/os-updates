@@ -25,7 +25,8 @@ windows:
     - bpython
 
 - window_name: tests
-  layout: 62a7,170x73,0,0[170x8,0,0,89,170x8,0,9,90,170x8,0,18,91,170x8,0,27,92,170x8,0,36,93,170x8,0,45,94,170x8,0,54,95,170x10,0,63,96]
+  # https://github.com/tmux-python/tmuxp/issues/98#issuecomment-93997967
+  layout: 0c59,208x59,0,0[208x19,0,0,67,208x19,0,20,68,208x19,0,40,69]
   options:
     automatic-rename: 'off'
   panes:
