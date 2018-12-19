@@ -15,6 +15,7 @@ tmuxp
 rope
 retox
 python-build
+remote-pdb
 
 
 pytest==3.8.2
