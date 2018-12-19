@@ -31,7 +31,7 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo log --patterns="*.py" --ignore-patterns="./.tox/*;./archops_os_updates-*"  --recursive
+    - nice watchmedo log --patterns="*.py" --ignore-patterns="./.tox/*;./archops_os_updates-*"  --recursive
 
 - window_name: tests
   layout: 62a7,170x73,0,0[170x8,0,0,89,170x8,0,9,90,170x8,0,18,91,170x8,0,27,92,170x8,0,36,93,170x8,0,45,94,170x8,0,54,95,170x10,0,63,96]
@@ -41,35 +41,35 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e flake8 ' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e flake8 ' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e pylint ' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e pylint ' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py"  --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py27 --workdir=.tox/py27'  --drop
+    - nice watchmedo shell-command  --patterns="*.py"  --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py27 --workdir=.tox/py27'  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py35 --workdir=.tox/py35' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e py35 --workdir=.tox/py35' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py36 --workdir=.tox/py36' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py36 --workdir=.tox/py36' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py37 --workdir=.tox/py37'  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py37 --workdir=.tox/py37'  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy --workdir=.tox/pypy'  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy --workdir=.tox/pypy'  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy35 --workdir=.tox/pypy  '  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pypy35 --workdir=.tox/pypy  '  --drop
 
 - window_name: bash
   layout: main-horizontal
