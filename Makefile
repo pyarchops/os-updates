@@ -88,7 +88,7 @@ install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
 up: down ## starts development tmuxp mode
-	./.bootstrap.sh 
+	./.bootstrap.sh
 
 down: ## stops development tmuxp mode
 	tmux kill-session -t python-project || true
@@ -99,3 +99,4 @@ wipe: ## cleans .venv and other files
 	rm -rf .tox
 	rm -rf .pyenv
 	find . -name __pycache__ | xargs -i rm -rf {}
+	rm -f .python-version
