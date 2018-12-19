@@ -22,4 +22,5 @@ which pypy3.5 || pyenv install pypy3.5-6.0.0
 
 pyenv local 3.7.0 pypy3.5-6.0.0
 
+test -e .tox || tox
 tmuxp load .tmuxp.yaml
