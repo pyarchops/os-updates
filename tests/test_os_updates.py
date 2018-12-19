@@ -28,11 +28,8 @@ def test_os_updates_using_docker():
                   ssh_extra_args='-o StrictHostKeyChecking=no')
 
         try:
-            result = os_updates.apply(api)
-            print(dir(result))
-            # TODO: this never gets executed on error
-            print(dir(result))
+            result = os_updates.apply(api)['contacted'][connection_string]
         except Exception as error:
-            print(error)
             raise error
-        # I need an assert here
+
+        assert result['msg'] == 'System upgraded'
