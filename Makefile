@@ -100,3 +100,4 @@ wipe: ## cleans .venv and other files
 	rm -rf .pyenv
 	find . -name __pycache__ | xargs -i rm -rf {}
 	rm -f .python-version
+	rm -rf .eggs
