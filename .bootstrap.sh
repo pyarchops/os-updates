@@ -18,9 +18,8 @@ source .venv/bin/activate
 
 # install required python versions
 which python3.7 || pyenv install 3.7.0
-which pypy3.5 || pyenv install pypy3.5-6.0.0
 
-pyenv local 3.7.0 pypy3.5-6.0.0
+pyenv local 3.7.0
 
 test -e .tox || tox
 tmuxp load .tmuxp.yaml
