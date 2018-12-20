@@ -11,6 +11,7 @@ import re
 import time
 import socket
 from contextlib import contextmanager
+from typing import Iterator
 from fabric.api import local
 from fabric.context_managers import settings, quiet
 import paramiko
@@ -22,7 +23,12 @@ from paramiko.ssh_exception import (
 import netifaces
 
 
-def wait_for_ssh(host, initial_wait=0, interval=0, retries=1):
+def wait_for_ssh(
+        host: dict,
+        initial_wait: int = 0,
+        interval: int = 0,
+        retries: int = 1
+) -> bool:
     """ waits for ssh to become available """
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -42,14 +48,15 @@ def wait_for_ssh(host, initial_wait=0, interval=0, retries=1):
 
 
 @contextmanager
-def ephemeral_docker_container(**kwargs):
+def ephemeral_docker_container(**kwargs: dict) -> Iterator[dict]:
     """
         prepares a docker container, yelding a dict
         with its configuration before deleting the container
 
     """
     try:
-        container_id = docker_up(image=kwargs['image'])
+        image = str(kwargs['image'])
+        container_id = docker_up(image)
 
         yield dict({
             'user': 'root',
@@ -65,7 +72,7 @@ def ephemeral_docker_container(**kwargs):
         raise error
 
 
-def docker_up(image, privileged=False):
+def docker_up(image: str, privileged: bool = False) -> str:
     """
         runs a docker container
 
@@ -98,10 +105,10 @@ def docker_up(image, privileged=False):
         retries=10,
         interval=1
     )
-    return container_id
+    return str(container_id)
 
 
-def docker_down(container_id):
+def docker_down(container_id: str) -> None:
     """
         kills the docker container
 
@@ -112,7 +119,7 @@ def docker_down(container_id):
         local('docker kill %s' % container_id)
 
 
-def docker_rm(container_id):
+def docker_rm(container_id: str) -> None:
     """
         removes a docker container
 
@@ -123,7 +130,7 @@ def docker_rm(container_id):
         local('docker rm --force %s' % container_id)
 
 
-def docker_container_port(container_id):
+def docker_container_port(container_id: str) -> int:
     """
         returns the ssh port number for a docker instance
 
@@ -139,10 +146,10 @@ def docker_container_port(container_id):
             capture=True
         )
 
-        return output.split(':')[1]
+        return int(output.split(':')[1])
 
 
-def dockerd_ip():
+def dockerd_ip() -> str:
     """
         returns the ip address of the docker daemon
 
@@ -153,9 +160,9 @@ def dockerd_ip():
     """
     if 'DOCKER_HOST' in os.environ:
         docker_host_env = os.environ.get('DOCKER_HOST')
-        ipaddr = re.search(
+        ipaddr = re.search(  # type: ignore
             r'[tcp|http]:\/\/(.*):\d.*', docker_host_env).group(1)  # noqa
     else:
         ipaddr = netifaces.ifaddresses(
             'docker0')[netifaces.AF_INET][0]['addr']
-    return ipaddr
+    return str(ipaddr)

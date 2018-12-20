@@ -17,7 +17,5 @@ retox
 python-build
 # https://pypi.org/project/remote-pdb/
 remote-pdb
-
-
 pytest==3.8.2
 pytest-runner==4.2
