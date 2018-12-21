@@ -6,18 +6,16 @@ ArchOps OS updates
 .. image:: https://img.shields.io/pypi/v/archops_os_updates.svg
         :target: https://pypi.python.org/pypi/archops_os_updates
 
-.. image:: https://img.shields.io/travis/azulinho/archops_os_updates.svg
-        :target: https://travis-ci.org/azulinho/archops_os_updates
+.. image:: https://img.shields.io/travis/pyarchops/archops_os_updates.svg
+        :target: https://travis-ci.org/pyarchops/archops_os_updates
 
 .. image:: https://readthedocs.org/projects/archops-os_updates/badge/?version=latest
         :target: https://archops-os_updates.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
-.. image:: https://pyup.io/repos/github/azulinho/archops_os_updates/shield.svg
-     :target: https://pyup.io/repos/github/azulinho/archops_os_updates/
-     :alt: Updates
-
+.. image:: https://pyup.io/repos/github/pyarchops/os-updates/shield.svg
+     :target: https://pyup.io/repos/github/pyarchops/os-updates/
+          :alt: Updates
 
 
 Install All OS updates
