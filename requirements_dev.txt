@@ -1,20 +1,25 @@
-eip==18.1
-bumpversion==0.5.3
-wheel==0.32.1
-watchdog==0.9.0
-flake8==3.5.0
-tox==2.9.1
-coverage==4.5.1
-Sphinx==1.8.1
-twine==1.12.1
-pylint
-ipython
+ansible
 bpython
-ropevim
-tmuxp
-rope
-python-build
-# https://pypi.org/project/remote-pdb/
-remote-pdb
+bumpversion==0.5.3
+coverage==4.5.1
+eip==18.1
+fabric3 < 2.0
+flake8==3.5.0
+ipython
+mypy
+netifaces
+paramiko
+pylint
 pytest==3.8.2
 pytest-runner==4.2
+python-build
+rope
+ropevim
+Sphinx==1.8.1
+tmuxp
+tox==2.9.1
+twine==1.12.1
+watchdog==0.9.0
+wheel==0.32.1
+# https://pypi.org/project/remote-pdb/
+remote-pdb
