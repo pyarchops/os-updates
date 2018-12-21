@@ -9,4 +9,4 @@ branch: next-release
 search: False
 
 requirements:
-  - requirements.txt:
+  - requirements.txt
