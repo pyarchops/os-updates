@@ -17,9 +17,9 @@ eval "$(pyenv init -)"
 source .venv/bin/activate
 
 # install required python versions
-which python3.7 || pyenv install 3.7.0
+(pyenv versions | grep 3.7.1) || pyenv install 3.7.1
 
-pyenv local 3.7.0
+pyenv local 3.7.1
 
 test -e .tox || tox
 tmuxp load .tmuxp.yaml
