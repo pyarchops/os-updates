@@ -93,7 +93,7 @@ up: down ## starts development tmuxp mode
 down: ## stops development tmuxp mode
 	tmux kill-session -t python-project || true
 
-wipe: ## cleans .venv and other files
+wipe: clean ## cleans .venv and other files
 	rm -rf .venv
 	rm -rf .npm-packages
 	rm -rf .tox
