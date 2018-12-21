@@ -1,3 +1,4 @@
+# pyup: ignore file
 ansible
 bpython
 bumpversion==0.5.3
