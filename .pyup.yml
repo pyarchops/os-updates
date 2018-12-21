@@ -10,7 +10,3 @@ search: False
 
 requirements:
   - requirements.txt:
-      update: insecure
-
-  - requirements_dev.txt:
-      update: False
