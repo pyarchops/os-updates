@@ -54,14 +54,13 @@ Usage
 Development
 -----------
 
-1. Install `tmux`
+Install requirements:
 
-2. Install python requirements: `python3-virtualenv python3-pip`
+.. code-block:: console
 
-3. Install `make`
+    $ sudo pacman -S tmux python-virtualenv python-pip libjpeg-turbo gcc make
 
-
-See the `Makefile`, to get started simply execute:
+2. See the `Makefile`, to get started simply execute:
 
 .. code-block:: console
 
