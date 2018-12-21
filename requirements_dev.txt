@@ -3,7 +3,6 @@ ansible
 bpython
 bumpversion==0.5.3
 coverage==4.5.1
-eip==18.1
 fabric3 < 2.0
 flake8==3.5.0
 ipython
