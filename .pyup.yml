@@ -3,6 +3,5 @@
 
 update: insecure
 pin: True
-schedule: "every day"
 label_prs: update_deps
 
