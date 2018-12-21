@@ -9,8 +9,8 @@ branch: next-release
 search: False
 
 requirements:
-    - requirements.txt:
+  - requirements.txt:
       update: insecure
 
-    - requirements_dev.txt:
+  - requirements_dev.txt:
       update: False
