@@ -1,7 +1,6 @@
 suitable
 paramiko
 ansible
-pydocktors
 fabric3 < 2.0
 netifaces
 mypy
