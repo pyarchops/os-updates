@@ -33,11 +33,11 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e mypy ' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e docs ' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e pylint '  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e syntax '  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
