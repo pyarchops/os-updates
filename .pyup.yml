@@ -4,4 +4,5 @@
 update: insecure
 pin: True
 label_prs: update_deps
+branch: next-release
 
