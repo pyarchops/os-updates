@@ -1,9 +1,12 @@
 stages:
+    - setup
     - test
 
-before_script:
-    - bash .bootstrap.sh
-
+setup:
+    stage: setup
+    script: bash .bootstrap.sh
+    tags:
+        - archlinux
 docs:
     stage: test
     script: tox -e docs
