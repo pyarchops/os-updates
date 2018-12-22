@@ -22,12 +22,17 @@ if ! `which pyenv >/dev/null 2>&1`; then
     if ! `test -e .pyenv`; then
         echo "installing pyenv locally...."
         git clone https://github.com/pyenv/pyenv.git .pyenv
-    else
-        echo ".pyenv found, using local pyenv"
-        export PYENV_ROOT="$PWD/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
     fi
 fi
+
+if `test -e .pyenv`; then
+    echo ".pyenv found, using local pyenv"
+    export PYENV_ROOT="$PWD/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+
+which pyenv
 
 echo "activating  pyenv...."
 eval "$(pyenv init -)"
