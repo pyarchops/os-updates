@@ -1,5 +1,8 @@
 stages:
     - test
+job:
+    tags:
+        - archlinux
 
 docs:
     stage: test
