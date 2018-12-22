@@ -59,7 +59,7 @@ Install requirements:
 .. code-block:: console
 
     $ sudo pacman -S tmux python-virtualenv python-pip libjpeg-turbo gcc make
-    vim git
+    vim git tk tcl
 
 Git clone this repository
 
