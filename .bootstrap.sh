@@ -35,13 +35,17 @@ if `test -e .pyenv`; then
 fi
 
 
-which pyenv
+which pyenv # debug
 
 echo "${bold}activating  pyenv....${normal}"
 eval "$(pyenv init -)"
 
+which pyenv # debug
+
 echo "${bold}activating  venv....${normal}"
 source .venv/bin/activate
+
+which pyenv # debug
 
 local_python_version=`cat .python-version`
 
