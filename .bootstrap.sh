@@ -2,31 +2,34 @@
 # .boostrap.sh
 # install required python dependencies
 
+bold=$(tput bold)
+normal=$(tput sgr0)
 
-echo "running bootstrap ...."
+echo "${bold}running bootstrap ....${normal}"
+
 
 if [ ! -e .venv ]; then
-    echo "initializing virtualenv..."
+    echo "${bold}initializing virtualenv...${normal}"
     virtualenv --python=`which python` .venv
     source .venv/bin/activate
-    echo "installing python requirements..."
+    echo "${bold}installing python requirements...${normal}"
     pip install -r requirements.txt
-    echo "installing development python requirements..."
+    echo "${bold}installing development python requirements...${normal}"
     pip install -r requirements_dev.txt
-    echo "installing local source..."
+    echo "${bold}installing local source...${normal}"
     pip install -e .
   fi
 
 
 if ! `which pyenv >/dev/null 2>&1`; then
     if ! `test -e .pyenv`; then
-        echo "installing pyenv locally...."
+        echo "${bold}installing pyenv locally....${normal}"
         git clone https://github.com/pyenv/pyenv.git .pyenv
     fi
 fi
 
 if `test -e .pyenv`; then
-    echo ".pyenv found, using local pyenv"
+    echo "${bold}.pyenv found, using local pyenv${normal}"
     export PYENV_ROOT="$PWD/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
@@ -34,20 +37,20 @@ fi
 
 which pyenv
 
-echo "activating  pyenv...."
+echo "${bold}activating  pyenv....${normal}"
 eval "$(pyenv init -)"
 
-echo "activating  venv...."
+echo "${bold}activating  venv....${normal}"
 source .venv/bin/activate
 
 local_python_version=`cat .python-version`
 
 if ! `pyenv versions | grep ${local_python_version} >/dev/null 2>&1`; then
-    echo "installing python version ${local_python_version} using pyenv"
+    echo "${bold}installing python version ${local_python_version} using pyenv${normal}"
     pyenv install ${local_python_version}
 fi
 
-echo "running test for the first time...."
+echo "${bold}running test for the first time....${normal}"
 test -e .tox || tox
 
-echo "finished bootstrapping..."
+echo "${bold}finished bootstrapping...${normal}"
