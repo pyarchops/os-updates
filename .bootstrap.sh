@@ -19,19 +19,11 @@ if [ ! -e .venv ]; then
     pip install -r requirements_dev.txt
     echo "${bold}installing local source...${normal}"
     pip install -e .
-  fi
-
-if ! `which pyenv >/dev/null 2>&1`; then
-    if ! `test -e .pyenv`; then
-        echo "${bold}installing pyenv locally....${normal}"
-        git clone https://github.com/pyenv/pyenv.git .pyenv
-    fi
 fi
 
-if `test -e .pyenv`; then
-    echo "${bold}.pyenv found, using local pyenv${normal}"
-    export PYENV_ROOT="$PWD/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
+if ! `which pyenv >/dev/null 2>&1`; then
+    echo "${bold}installing pyenv....${normal}"
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 fi
 
 echo "${bold}activating  pyenv....${normal}"
