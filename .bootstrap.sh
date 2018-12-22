@@ -11,6 +11,7 @@ echo "${bold}running bootstrap ....${normal}"
 if [ ! -e .venv ]; then
     echo "${bold}initializing virtualenv...${normal}"
     virtualenv --python=`which python` .venv
+    echo "${bold}activating  venv....${normal}"
     source .venv/bin/activate
     echo "${bold}installing python requirements...${normal}"
     pip install -r requirements.txt
@@ -19,7 +20,6 @@ if [ ! -e .venv ]; then
     echo "${bold}installing local source...${normal}"
     pip install -e .
   fi
-
 
 if ! `which pyenv >/dev/null 2>&1`; then
     if ! `test -e .pyenv`; then
@@ -34,18 +34,8 @@ if `test -e .pyenv`; then
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
-
-which pyenv # debug
-
 echo "${bold}activating  pyenv....${normal}"
 eval "$(pyenv init -)"
-
-which pyenv # debug
-
-echo "${bold}activating  venv....${normal}"
-source .venv/bin/activate
-
-which pyenv # debug
 
 local_python_version=`cat .python-version`
 
