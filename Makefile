@@ -99,7 +99,6 @@ wipe: clean ## cleans .venv and other files
 	rm -rf .tox
 	rm -rf .pyenv
 	find . -name __pycache__ | xargs -i rm -rf {}
-	rm -f .python-version
 	rm -rf .eggs
 	rm -rf .mpypy_cache
 	rm -rf *.egg-info
