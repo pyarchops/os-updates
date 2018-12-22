@@ -88,7 +88,7 @@ install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
 up: down ## starts development tmuxp mode
-	./.bootstrap.sh
+	./.bootstrap.sh && tmuxp load .tmuxp.yaml
 
 down: ## stops development tmuxp mode
 	tmux kill-session -t python-project || true

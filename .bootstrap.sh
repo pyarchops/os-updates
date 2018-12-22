@@ -22,4 +22,3 @@ source .venv/bin/activate
 pyenv local 3.7.1
 
 test -e .tox || tox
-tmuxp load .tmuxp.yaml
