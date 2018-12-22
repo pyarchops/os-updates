@@ -19,7 +19,7 @@ if [ ! -e .venv ]; then
 
 
 if ! `which pyenv >/dev/null 2>&1`; then
-    if ! -e .pyenv; then
+    if ! `test -e .pyenv`; then
         echo "installing pyenv locally...."
         git clone https://github.com/pyenv/pyenv.git .pyenv
     else
