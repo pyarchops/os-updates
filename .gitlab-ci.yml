@@ -1,17 +1,20 @@
 stages:
     - test
-job:
-    tags:
-        - archlinux
 
 docs:
     stage: test
     script: tox -e docs
+    tags:
+        - archlinux
 
 syntax:
     stage: test
     script: tox -e syntax
+    tags:
+        - archlinux
 
 py37:
     stage: test
     script: tox -e py37
+    tags:
+        - archlinux
