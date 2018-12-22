@@ -59,6 +59,15 @@ Install requirements:
 .. code-block:: console
 
     $ sudo pacman -S tmux python-virtualenv python-pip libjpeg-turbo gcc make
+    vim git
+
+Git clone this repository
+
+.. code-block:: console
+
+    git clone https://github.com/pyarchops/os-updates.git pyarchops.os-updates
+    cd pyarchops.os-updates
+
 
 2. See the `Makefile`, to get started simply execute:
 
