@@ -1,0 +1,14 @@
+stages:
+    - test
+
+docs:
+    stage: test
+    script: tox -e docs
+
+syntax:
+    stage: test
+    script: tox -e syntax
+
+py37:
+    stage: test
+    script: tox -e py37
