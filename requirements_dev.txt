@@ -1,5 +1,4 @@
 # pyup: ignore file
-ansible
 bpython
 bumpversion==0.5.3
 coverage==4.5.1
