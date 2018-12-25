@@ -15,7 +15,7 @@ docs:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate && LC_ALL=C make docs
+      - source .venv/bin/activate && LC_ALL=C BROWSER=echo make docs
     tags:
         - archlinux
 
