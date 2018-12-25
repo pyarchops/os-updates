@@ -49,6 +49,9 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+clean: clean-build clean-pyc clean-test ## runs all cleas
+
+
 lint: ## check style with pylint
 	pylint archops_os_updates tests
 
