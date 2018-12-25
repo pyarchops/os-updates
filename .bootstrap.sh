@@ -15,8 +15,12 @@ if ! `which pyenv >/dev/null 2>&1`; then
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 fi
 
+
 echo "${bold}activating  pyenv....${normal}"
 source ~/.bashrc
+
+echo "${bold}looking for a new pyenv version....${normal}"
+pyenv update
 
 local_python_version=`cat .python-version`
 
