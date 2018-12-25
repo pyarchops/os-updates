@@ -16,8 +16,7 @@ docs:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate
-      - tox -e docs
+      - source .venv/bin/activate && tox -e docs
     tags:
         - archlinux
 
@@ -26,8 +25,7 @@ syntax:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate
-      - tox -e syntax
+      - source .venv/bin/activate && tox -e syntax
     tags:
         - archlinux
 
@@ -36,7 +34,6 @@ py37:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate
-      - tox -e py37
+      - source .venv/bin/activate && tox -e py37
     tags:
         - archlinux
