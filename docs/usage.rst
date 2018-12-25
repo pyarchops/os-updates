@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use ArchOps OS updates in a project::
+To use pyArchOps/OS updates in a project::
 
-    import archops_os_updates
+    import pyarchops_os_updates

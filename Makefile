@@ -32,6 +32,7 @@ help:
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
 clean-build: ## remove build artifacts
+	rm -fr docs/_build/*
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
@@ -43,6 +44,7 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
+	rm -rf .mypy_cache
 
 clean-test: ## remove test and coverage artifacts
 	rm -f .coverage
@@ -53,24 +55,24 @@ clean: clean-build clean-pyc clean-test ## runs all cleas
 
 
 lint: ## check style with pylint
-	pylint archops_os_updates tests
+	pylint pyarchops_os_updates tests
 
 mypy: ## check types with mypy
-	mypy archops_os_updates tests
+	mypy pyarchops_os_updates tests
 
 pytest: ## run tests quickly with the default Python
 	py.test
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source archops_os_updates -m pytest
+	coverage run --source pyarchops_os_updates -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/archops_os_updates.rst
+	rm -f docs/pyarchops_os_updates.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ archops_os_updates
+	sphinx-apidoc -o docs/ pyarchops_os_updates
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html

@@ -14,14 +14,14 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - cd archops_os_updates
+    - cd pyarchops_os_updates
     - ctags -R .
     - vim .
     focus: true
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - cd archops_os_updates
+    - cd pyarchops_os_updates
     - bpython
 
 - window_name: tests
@@ -33,15 +33,15 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./;/archops_os_updates-*" --recursive  --command='make docs ' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./;/pyarchops_os_updates-*" --recursive  --command='make docs ' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/archops_os_updates-*"  --recursive  --command='make mypy lint '  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/pyarchops_os_updates-*"  --recursive  --command='make mypy lint '  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/archops_os_updates-*"  --recursive  --command='make pytest'  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/pyarchops_os_updates-*"  --recursive  --command='make pytest'  --drop
 
 - window_name: bash
   layout: main-horizontal
@@ -49,11 +49,11 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - cd archops_os_updates
+    - cd pyarchops_os_updates
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - cd archops_os_updates
+    - cd pyarchops_os_updates
     - tmux select-window -t 0
     - tmux select-pane -t 0
     - reset

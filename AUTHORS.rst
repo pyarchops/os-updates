@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Azul <archops@azulinho.com>
+* Azul <pyarchops@azulinho.com>
 
 Contributors
 ------------

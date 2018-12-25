@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=archops_os_updates
+set SPHINXPROJ=pyarchops_os_updates
 
 if "%1" == "" goto help
 

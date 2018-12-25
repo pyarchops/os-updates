@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Helpers for `archops tests` packages."""
+"""Helpers for `pyarchops tests` packages."""
 
 # TODO: all this functions should be oved to a
-# archops.helpers package on pypi
+# pyarchops.helpers package on pypi
 # TODO: then do a release for this
 
 import os

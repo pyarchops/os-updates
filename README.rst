@@ -1,20 +1,20 @@
 =====================
-pyArchOps OS updates
+pyArchOps/OS updates
 =====================
 
 
-.. image:: https://img.shields.io/pypi/v/pyarchops_os_updates.svg
-        :target: https://pypi.python.org/pypi/pyarchops_os_updates
+.. image:: https://img.shields.io/pypi/v/pypyarchops_os_updates.svg
+        :target: https://pypi.python.org/pypi/pypyarchops_os_updates
 
-.. image:: https://img.shields.io/travis/pyarchops/pyarchops_os_updates.svg
-        :target: https://travis-ci.org/pyarchops/pyarchops_os_updates
+.. image:: https://img.shields.io/travis/pypyarchops/pypyarchops_os_updates.svg
+        :target: https://travis-ci.org/pypyarchops/pypyarchops_os_updates
 
-.. image:: https://readthedocs.org/projects/pyarchops-os_updates/badge/?version=latest
-        :target: https://pyarchops-os_updates.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pypyarchops-os_updates/badge/?version=latest
+        :target: https://pypyarchops-os_updates.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/pyarchops/os-updates/shield.svg
-     :target: https://pyup.io/repos/github/pyarchops/os-updates/
+.. image:: https://pyup.io/repos/github/pypyarchops/os-updates/shield.svg
+     :target: https://pyup.io/repos/github/pypyarchops/os-updates/
           :alt: Updates
 
 
@@ -22,7 +22,7 @@ Install All OS updates
 
 
 * Free software: MIT license
-* Documentation: https://pyarchops-os_updates.readthedocs.io.
+* Documentation: https://pypyarchops-os_updates.readthedocs.io.
 
 
 Features
@@ -36,7 +36,7 @@ Usage
 .. code-block:: python
 
     import os
-    import archops_os_updates
+    import pyarchops_os_updates
 
     api = Api(
         '127.0.0.1:22',
@@ -48,7 +48,7 @@ Usage
         sudo=True,
         ssh_extra_args='-o StrictHostKeyChecking=no'
     )
-    result = archops_os_updates.apply(api)
+    result = pyarchops_os_updates.apply(api)
     print(result)
 
 Development
@@ -65,8 +65,8 @@ Git clone this repository
 
 .. code-block:: console
 
-    git clone https://github.com/pyarchops/os-updates.git pyarchops.os-updates
-    cd pyarchops.os-updates
+    git clone https://github.com/pypyarchops/os-updates.git pypyarchops.os-updates
+    cd pypyarchops.os-updates
 
 
 2. See the `Makefile`, to get started simply execute:

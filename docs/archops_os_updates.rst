@@ -1,13 +1,13 @@
-archops\_os\_updates package
+pyarchops\_os\_updates package
 ============================
 
 Submodules
 ----------
 
-archops\_os\_updates.os\_updates module
+pyarchops\_os\_updates.os\_updates module
 ---------------------------------------
 
-.. automodule:: archops_os_updates.os_updates
+.. automodule:: pyarchops_os_updates.os_updates
     :members:
     :undoc-members:
     :show-inheritance:
@@ -16,7 +16,7 @@ archops\_os\_updates.os\_updates module
 Module contents
 ---------------
 
-.. automodule:: archops_os_updates
+.. automodule:: pyarchops_os_updates
     :members:
     :undoc-members:
     :show-inheritance:
