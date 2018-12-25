@@ -5,6 +5,7 @@
 
 # TODO: all this functions should be oved to a
 # archops.helpers package on pypi
+# TODO: then do a release for this
 
 import os
 import re
