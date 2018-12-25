@@ -15,7 +15,7 @@ docs:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate && make docs
+      - source .venv/bin/activate && LC_ALL=C make docs
     tags:
         - archlinux
 
