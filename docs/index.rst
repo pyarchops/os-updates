@@ -1,4 +1,4 @@
-Welcome to pyArchOps OS updates's documentation!
+Welcome to pyArchOps/OS updates's documentation!
 ======================================================
 
 .. toctree::
