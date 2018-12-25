@@ -71,8 +71,8 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/archops_os_updates.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ archops_os_updates
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
+	sh -c 'cd docs ; make clean'
+	sh -c 'cd docs ; make html'
 	$(BROWSER) docs/_build/html/index.html
 
 
