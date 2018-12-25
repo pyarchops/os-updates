@@ -8,6 +8,23 @@ normal=$(tput sgr0)
 echo "${bold}running bootstrap ....${normal}"
 
 
+if ! `which pyenv >/dev/null 2>&1`; then
+    echo "${bold}installing pyenv....${normal}"
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+fi
+
+echo "${bold}activating  pyenv....${normal}"
+source ~/.bashrc
+
+local_python_version=`cat .python-version`
+
+if ! `pyenv versions | grep ${local_python_version} >/dev/null 2>&1`; then
+    echo "${bold}installing python version ${local_python_version} using pyenv${normal}"
+    pyenv install ${local_python_version}
+fi
+
 if [ ! -e .venv ]; then
     echo "${bold}initializing virtualenv...${normal}"
     virtualenv --python=`which python` .venv
@@ -21,23 +38,6 @@ if [ ! -e .venv ]; then
     pip install -e .
 fi
 
-if ! `which pyenv >/dev/null 2>&1`; then
-    echo "${bold}installing pyenv....${normal}"
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-    source ~/.bashrc
-fi
-
-echo "${bold}activating  pyenv....${normal}"
-eval "$(pyenv init -)"
-
-local_python_version=`cat .python-version`
-
-if ! `pyenv versions | grep ${local_python_version} >/dev/null 2>&1`; then
-    echo "${bold}installing python version ${local_python_version} using pyenv${normal}"
-    pyenv install ${local_python_version}
-fi
 
 echo "${bold}running test for the first time....${normal}"
 test -e .tox || tox
