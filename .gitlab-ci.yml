@@ -1,3 +1,5 @@
+pre_clone_script: umask 077
+
 stages:
     - setup
     - test
