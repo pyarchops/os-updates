@@ -22,7 +22,7 @@ Install All OS updates
 
 
 * Free software: MIT license
-* Documentation: https://pypyarchops-os_updates.readthedocs.io.
+* Documentation: https://pypyarchops-os-updates.readthedocs.io.
 
 
 Features
