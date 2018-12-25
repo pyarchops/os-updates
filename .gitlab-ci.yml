@@ -9,18 +9,24 @@ setup:
         - archlinux
 docs:
     stage: test
-    script: tox -e docs
+    script:
+      - source .venv/bin/activate
+      - tox -e docs
     tags:
         - archlinux
 
 syntax:
     stage: test
-    script: tox -e syntax
+    script:
+      - source .venv/bin/activate
+      - tox -e syntax
     tags:
         - archlinux
 
 py37:
     stage: test
-    script: tox -e py37
+    script:
+      - source .venv/bin/activate
+      - tox -e py37
     tags:
         - archlinux
