@@ -1,5 +1,5 @@
 pyarchops_os_updates
-==================
+====================
 
 .. toctree::
    :maxdepth: 4
