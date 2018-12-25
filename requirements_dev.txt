@@ -18,7 +18,6 @@ rope
 ropevim
 Sphinx==1.8.1
 tmuxp
-tox==2.9.1
 twine==1.12.1
 watchdog==0.9.0
 wheel==0.32.1

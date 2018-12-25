@@ -7,7 +7,6 @@ setup:
     script: bash .bootstrap.sh
     artifacts:
       paths:
-        - .tox
         - .venv
     tags:
         - archlinux
@@ -16,7 +15,7 @@ docs:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate && tox -e docs
+      - source .venv/bin/activate && make docs
     tags:
         - archlinux
 
@@ -25,7 +24,7 @@ syntax:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate && tox -e syntax
+      - source .venv/bin/activate && make mypy lint
     tags:
         - archlinux
 
@@ -34,6 +33,6 @@ py37:
     dependencies:
       - setup
     script:
-      - source .venv/bin/activate && tox -e py37
+      - source .venv/bin/activate && make pytest
     tags:
         - archlinux

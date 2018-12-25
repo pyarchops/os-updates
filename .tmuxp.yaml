@@ -33,15 +33,15 @@ windows:
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*" --recursive  --command='tox -e docs ' --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./;/archops_os_updates-*" --recursive  --command='make docs ' --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e syntax '  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/archops_os_updates-*"  --recursive  --command='make mypy lint '  --drop
   - shell_command:
     - bash -l
     - source .venv/bin/activate
-    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;./.tox/*;/archops_os_updates-*"  --recursive  --command='tox -e py37 '  --drop
+    - nice watchmedo shell-command  --patterns="*.py" --ignore-patterns="./.venv/*;/archops_os_updates-*"  --recursive  --command='make pytest'  --drop
 
 - window_name: bash
   layout: main-horizontal

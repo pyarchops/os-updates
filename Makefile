@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs up down wipe help
+.PHONY: clean clean-test clean-pyc clean-build docs up down wipe help mypy lint pytest
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -45,7 +45,6 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
@@ -53,11 +52,11 @@ clean-test: ## remove test and coverage artifacts
 lint: ## check style with pylint
 	pylint archops_os_updates tests
 
-test: ## run tests quickly with the default Python
-	py.test
+mypy: ## check types with mypy
+	mypy archops_os_updates tests
 
-test-all: ## run tests on every Python version with tox
-	tox
+pytest: ## run tests quickly with the default Python
+	py.test
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source archops_os_updates -m pytest
@@ -72,6 +71,7 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
+
 
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
@@ -96,7 +96,6 @@ down: ## stops development tmuxp mode
 wipe: clean ## cleans .venv and other files
 	rm -rf .venv
 	rm -rf .npm-packages
-	rm -rf .tox
 	rm -rf .pyenv
 	find . -name __pycache__ | xargs -i rm -rf {}
 	rm -rf .eggs
@@ -104,3 +103,5 @@ wipe: clean ## cleans .venv and other files
 	rm -rf *.egg-info
 	rm -rf .eggs
 	rm -rf .pytest_cache
+
+

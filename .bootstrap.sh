@@ -42,8 +42,4 @@ if [ ! -e .venv ]; then
     pip install -e .
 fi
 
-# TODO: fixme
-echo "${bold}running test for the first time....${normal}"
-test -e .tox || mkdir -p .tox # && tox
-
 echo "${bold}finished bootstrapping...${normal}"
