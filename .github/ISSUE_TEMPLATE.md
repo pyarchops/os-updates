@@ -1,4 +1,4 @@
-* ArchOps OS updates version:
+* pyArchOps/OS updates version:
 * Python version:
 * Operating System:
 

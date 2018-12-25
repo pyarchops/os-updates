@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `archops_os_updates` package."""
+"""Tests for `pyarchops_os_updates` package."""
 
 from suitable import Api
-from archops_os_updates import os_updates
+from pyarchops_os_updates import os_updates
 from tests.test_helpers import ephemeral_docker_container
 
 
@@ -12,7 +12,7 @@ def test_os_updates_using_docker():
     """Test the OS updates."""
 
     with ephemeral_docker_container(
-            image='azulinho/archops-base'
+            image='azulinho/pyarchops-base'
     ) as container:
         connection_string = "{}:{}".format(
             container['ip'], container['port']

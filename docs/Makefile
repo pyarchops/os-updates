@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = archops_os_updates
+SPHINXPROJ    = pyarchops_os_updates
 SOURCEDIR     = .
 BUILDDIR      = _build
 

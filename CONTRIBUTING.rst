@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/pyArchOps/archops/os_updates/issues.
+Report bugs at https://github.com/pyArchOps/pyarchops/os_updates/issues.
 
 If you are reporting a bug, please include:
 
@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-ArchOps OS updates could always use more documentation, whether as part of the
-official ArchOps OS updates docs, in docstrings, or even on the web in blog posts,
+pyArchOps/OS updates could always use more documentation, whether as part of the
+official pyArchOps/OS updates docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback

@@ -43,9 +43,9 @@ with open('requirements_dev.txt') as requirements_dev_file:
     TEST_REQUIREMENTS = requirements_dev_file.read().splitlines()
 
 setup(
-    name='archops_os_updates',
+    name='pyarchops_os_updates',
     author="Azul",
-    author_email='archops@azulinho.com',
+    author_email='pyarchops@azulinho.com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -58,12 +58,12 @@ setup(
     license="MIT license",
     long_description=README + '\n\n' + HISTORY,
     include_package_data=True,
-    keywords='archops_os_updates',
-    packages=['archops_os_updates'],
+    keywords='pyarchops_os_updates',
+    packages=['pyarchops_os_updates'],
     setup_requires=SETUP_REQUIREMENTS,
     test_suite='tests',
     tests_require=TEST_REQUIREMENTS,
-    url='https://github.com/archops/os_updates',
-    version=find_version('archops_os_updates', '__init__.py'),
+    url='https://github.com/pyarchops/os_updates',
+    version=find_version('pyarchops_os_updates', '__init__.py'),
     zip_safe=False,
 )
