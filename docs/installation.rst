@@ -4,17 +4,27 @@
 Installation
 ============
 
-
 Stable release
 --------------
+
+The ArchOps software should be installed through the main repository,
+.. _pyArchOps : https://github.com/pyarchops/archops.git
+
+.. code-block:: console
+
+    $ pip install archops
+
+
+Latest OS updates release
+---------------------------
 
 To install ArchOps OS updates, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install archops/os_updates
+    $ pip install archops_os_updates
 
-This is the preferred method to install ArchOps OS updates, as it will always install the most recent stable release.
+This is the preferred method to install pyArchOps OS updates, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -32,13 +42,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/azulinho/archops/os_updates
+    $ git clone git://github.com/pyarchops/os_updates
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/azulinho/archops/os_updates/tarball/master
+    $ curl  -OL https://github.com/pyarchops/os_updates/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +57,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/azulinho/archops/os_updates
-.. _tarball: https://github.com/azulinho/archops/os_updates/tarball/master
+.. _Github repo: https://github.com/pyarchops/os_updates
+.. _tarball: https://github.com/pyarchops/os_updates/tarball/master
