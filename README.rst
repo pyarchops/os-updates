@@ -58,15 +58,14 @@ Install requirements:
 
 .. code-block:: console
 
-    $ sudo pacman -S tmux python-virtualenv python-pip libjpeg-turbo gcc make
-    vim git tk tcl
+    $ sudo pacman -S tmux python-virtualenv python-pip libjpeg-turbo gcc make vim git tk tcl
 
 Git clone this repository
 
 .. code-block:: console
 
-    git clone https://github.com/pypyarchops/os-updates.git pypyarchops.os-updates
-    cd pypyarchops.os-updates
+    $ git clone https://github.com/pypyarchops/os-updates.git pypyarchops.os-updates
+    $ cd pypyarchops.os-updates
 
 
 2. See the `Makefile`, to get started simply execute:
