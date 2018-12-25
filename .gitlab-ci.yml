@@ -5,10 +5,16 @@ stages:
 setup:
     stage: setup
     script: bash .bootstrap.sh
+    artifacts:
+      paths:
+        - .tox
+        - .venv
     tags:
         - archlinux
 docs:
     stage: test
+    dependencies:
+      - setup
     script:
       - source .venv/bin/activate
       - tox -e docs
@@ -17,6 +23,8 @@ docs:
 
 syntax:
     stage: test
+    dependencies:
+      - setup
     script:
       - source .venv/bin/activate
       - tox -e syntax
@@ -25,6 +33,8 @@ syntax:
 
 py37:
     stage: test
+    dependencies:
+      - setup
     script:
       - source .venv/bin/activate
       - tox -e py37
