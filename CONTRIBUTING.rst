@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/pypyArchOps/pyarchops/os_updates/issues.
+Report bugs at https://github.com/pyArchOps/pyarchops/os_updates/issues.
 
 If you are reporting a bug, please include:
 
@@ -45,7 +45,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/pypyArchOps/os-updates/issues.
+The best way to send feedback is to file an issue at https://github.com/pyArchOps/os-updates/issues.
 
 If you are proposing a feature:
 
@@ -57,17 +57,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `pypyarchops/os_updates` for local development.
+Ready to contribute? Here's how to set up `pyarchops/os_updates` for local development.
 
-1. Fork the `pypyarchops/os-updates` repo on GitHub.
+1. Fork the `pyarchops/os-updates` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/pypyarchops/os-updates.git
+    $ git clone git@github.com:your_name_here/pyarchops/os-updates.git
 
 3. set a development environment:
 
     $ sudo pacman -Sy tmux libffi pkgconf base-devel make
-    $ cd pypyarchops/os_updates/
+    $ cd pyarchops/os_updates/
     $ make up
 
 4. Create a branch for local development::
@@ -97,7 +97,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 3.7. Check
-   https://travis-ci.org/pypyArchOps/os-updates/pull_requests
+   https://travis-ci.org/pyArchOps/os-updates/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 
