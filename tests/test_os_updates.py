@@ -4,8 +4,8 @@
 """Tests for `pyarchops_os_updates` package."""
 
 from suitable import Api
+from pyarchops_helpers.helpers import ephemeral_docker_container
 from pyarchops_os_updates import os_updates
-from tests.test_helpers import ephemeral_docker_container
 
 
 def test_os_updates_using_docker():
