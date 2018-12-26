@@ -9,8 +9,8 @@ pyArchOps/OS updates
 .. image:: https://img.shields.io/travis/pyarchops/pyarchops_os_updates.svg
         :target: https://travis-ci.org/pyarchops/pyarchops_os_updates
 
-.. image:: https://readthedocs.org/projects/pyarchops-os-updates/badge/?version=latest
-        :target: https://pyarchops-os-updates.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/os-updates/badge/?version=latest
+        :target: https://os-updates.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/pyarchops/os-updates/shield.svg
