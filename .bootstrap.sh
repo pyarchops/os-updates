@@ -11,13 +11,12 @@ echo "${bold}running bootstrap ....${normal}"
 if ! `which pyenv >/dev/null 2>&1`; then
     echo "${bold}installing pyenv....${normal}"
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+    echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.profile
+    echo 'eval "$(pyenv init -)"' >> ~/.profile
 fi
 
-
 echo "${bold}activating  pyenv....${normal}"
-source ~/.bashrc
+. ~/.profile
 
 echo "${bold}looking for a new pyenv version....${normal}"
 pyenv update
@@ -33,7 +32,7 @@ if [ ! -e .venv ]; then
     echo "${bold}initializing virtualenv...${normal}"
     virtualenv --python=`which python` .venv
     echo "${bold}activating  venv....${normal}"
-    source .venv/bin/activate
+    . .venv/bin/activate
     echo "${bold}installing python requirements...${normal}"
     pip install -r requirements.txt
     echo "${bold}installing development python requirements...${normal}"
