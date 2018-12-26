@@ -6,8 +6,8 @@ pyArchOps/OS updates
 .. image:: https://img.shields.io/pypi/v/pyarchops_os_updates.svg
         :target: https://pypi.python.org/pypi/pyarchops_os_updates
 
-.. image:: https://img.shields.io/travis/pyarchops/pyarchops_os_updates.svg
-        :target: https://travis-ci.org/pyarchops/pyarchops_os_updates
+.. image:: https://img.shields.io/gitlab/pipeline/gitlab-org/gitlab-ce/master.svg
+        :target: https://gitlab.com/pyarchops/os-updates/pipelines
 
 .. image:: https://readthedocs.org/projects/os-updates/badge/?version=latest
         :target: https://os-updates.readthedocs.io/en/latest/?badge=latest
