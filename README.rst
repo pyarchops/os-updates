@@ -41,7 +41,7 @@ Usage
     api = Api(
         '127.0.0.1:22',
         connection='smart',
-        remote_user='ubuntu',
+        remote_user='root',
         private_key_file=os.getenv('HOME') + '/.ssh/id_rsa',
         become=True,
         become_user='root',
