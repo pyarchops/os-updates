@@ -12,7 +12,7 @@ def test_os_updates_using_docker():
     """Test the OS updates."""
 
     with ephemeral_docker_container(
-            image='azulinho/pyarchops-base'
+            image='registry.gitlab.com/pyarchops/pyarchops-base'
     ) as container:
         connection_string = "{}:{}".format(
             container['ip'], container['port']
