@@ -1,39 +1,52 @@
 
 stages:
     - setup
-    - test
+    - docs
+    - syntax
+    - app
 
 setup:
     stage: setup
-    script: bash .bootstrap.sh
+    script:
+      - bash .bootstrap.sh
+      - tar czf artifacts.tar.gz .venv
     artifacts:
       paths:
-        - .venv
+        - artifacts.tar.gz
     tags:
         - archlinux
 docs:
-    stage: test
+    stage: docs
     dependencies:
       - setup
     script:
+      - tar xzf artifacts.tar.gz
       - source .venv/bin/activate && LC_ALL=C BROWSER=echo make docs
+    artifacts:
+      paths:
+        - artifacts.tar.gz
     tags:
         - archlinux
 
 syntax:
-    stage: test
+    stage: syntax
     dependencies:
-      - setup
+      - docs
     script:
+      - tar xzf artifacts.tar.gz
       - source .venv/bin/activate && make mypy lint
+    artifacts:
+      paths:
+        - artifacts.tar.gz
     tags:
         - archlinux
 
-py37:
-    stage: test
+app:
+    stage: app
     dependencies:
-      - setup
+      - syntax
     script:
+      - tar xzf artifacts.tar.gz
       - source .venv/bin/activate && make pytest
     tags:
         - archlinux
