@@ -1,26 +1,26 @@
 # pyup: ignore file
 bpython
-bumpversion==0.5.3
-coverage==4.5.2
-fabric3 < 2.0
-flake8==3.7.4
+bumpversion
+coverage
+fabric3<2.0
+flake8
 jedi
 ipython
 mypy
 netifaces
 paramiko
 pylint
-pytest==4.2.0
-pytest-runner==4.2
+pytest
+pytest-runner
 pytest-cov
 python-build
 rope
 ropevim
-Sphinx==1.8.3
+Sphinx
 tmuxp
-twine==1.12.1
-watchdog==0.9.0
-wheel==0.32.3
+twine
+watchdog
+wheel
 # https://pypi.org/project/remote-pdb/
 remote-pdb
 pyarchops-helpers
