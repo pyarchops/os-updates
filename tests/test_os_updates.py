@@ -32,4 +32,4 @@ def test_os_updates_using_docker():
         except Exception as error:
             raise error
 
-        assert result['msg'] == 'System upgraded'
+        assert result['msg'] in ['System upgraded', 'Nothing to upgrade']
