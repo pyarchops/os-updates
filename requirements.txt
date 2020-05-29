@@ -1,1 +1,1 @@
-suitable
+suitable==0.16.0
